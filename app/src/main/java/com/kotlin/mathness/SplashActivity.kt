@@ -79,16 +79,6 @@ class SplashActivity : ComponentActivity() {
         arrayOf(ypwv_level_easy,ypwv_level_medium,ypwv_level_hard).forEach{
             it.setWaveVector(60f)
         }
-
-        Util.putPrefInt(this, PREFERENCE_LEVEL_EASY,5)
-        Util.putPrefInt(this, PREFERENCE_CURRENT_VICTORIES_EASY,18)
-
-        Util.putPrefInt(this, PREFERENCE_LEVEL_MEDIUM,6)
-        Util.putPrefInt(this, PREFERENCE_CURRENT_VICTORIES_MEDIUM,18)
-
-        Util.putPrefInt(this, PREFERENCE_LEVEL_HARD,3)
-        Util.putPrefInt(this, PREFERENCE_CURRENT_VICTORIES_HARD,3)
-
         ypwv_level_easy.max = Util.fib((maxOf(Util.getPrefInt(this, PREFERENCE_LEVEL_EASY, 1), 1)+3)) * 10
         ypwv_level_easy.progress = Util.getPrefInt(this, PREFERENCE_CURRENT_VICTORIES_EASY)*10
         ypwv_level_medium.max = Util.fib((maxOf(Util.getPrefInt(this, PREFERENCE_LEVEL_MEDIUM, 1), 1)+3)) * 10
