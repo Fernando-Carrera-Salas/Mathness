@@ -1,0 +1,58 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.devtools.ksp'
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'com.kotlin.mathness'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.kotlin.mathness"
+        minSdk 24
+        targetSdk 34
+        versionCode 6
+        versionName "0.6"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+configurations {
+    cleanedAnnotations
+    implementation.exclude group: 'org.jetbrains' , module:'annotations'
+}
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.androidx.room.common
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.core.ktx
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    annotationProcessor libs.androidx.room.compiler
+    ksp libs.androidx.room.compiler
+    implementation libs.ypwaveview
+    implementation libs.android.maskable.layout
+}
