@@ -5,12 +5,6 @@
     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Descargar en Play Store" height="80"/>
   </a>
 </p>
-<h3 align="center">
-  Actualmente en Prueba Alfa Cerrada
-</h3>
-<p align="center">
-  Puedes descargar la aplicación en Play Store uniéndote a <a href="https://groups.google.com/g/fc-apps-closed-testing" target="_blank">este Grupo de Google</a> primero.
-</p>
 
 # Mathness!
 
